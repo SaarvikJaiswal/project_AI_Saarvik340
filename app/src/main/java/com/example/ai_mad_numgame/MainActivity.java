@@ -144,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
         //Computing the sum of score array, which has the 1 or in each index,depending on correct or incorrect answers
         int sum=0;
        // your code here
+        for(int i=0;i<score.length();i++){
+            sum = sum+score[int];
+
+        }
         return sum;
     }
 
@@ -161,8 +165,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String getInterpretation(int [][]dataFrame,double slope){
+        string Interpretation = "all is well";
+
        //provide interpretation based on your slope analysis
         // Your code here
-        return "Your Interpretation";
-    }
+        if (slope>0 && slope<=.5){
+            Interpretation="You are a slow learner";
+            else if(slope>.5){
+                Interpretation="You are a fast learner";
+
+            }
+            else if(slope<0){
+                Interpretation="You are Unlearner Dumb ";
+
+            }
+        }
+        else if(dataFrame[0][1]==3 && slope==0) {
+            Interpretation = "You acheieved perfection";
+        }
+        else if(dataFrame[0][1]==0 && slope==0){
+            Interpretation="You do not learn";
+        }
+
+
+        return Interpretation;
+
 }
